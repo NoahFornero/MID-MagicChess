@@ -15,11 +15,12 @@ public class FootstepScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("w") || Input.GetKeyDown("s") || Input.GetKeyDown("a") || Input.GetKeyDown("d")) {
+        if (Input.GetKeyDown("w") || Input.GetKeyDown("s") || Input.GetKeyDown("a") || Input.GetKeyDown("d"))
+        {
             footsteps();
         }
-
-        if (Input.GetKeyUp("w") || Input.GetKeyUp("s") || Input.GetKeyUp("s") || Input.GetKeyUp("a") || Input.GetKeyUp("d")) {
+        else if (Input.GetKeyUp("w") || Input.GetKeyUp("s") || Input.GetKeyUp("s") || Input.GetKeyUp("a") || Input.GetKeyUp("d"))
+        {
             StopFootsteps();
         }
     }

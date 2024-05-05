@@ -14,6 +14,7 @@ public class Interactor : MonoBehaviour
     public GameObject board;
     public GameObject Light1;
     public GameObject Light2;
+    public GameObject Theme;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,8 @@ public class Interactor : MonoBehaviour
             board.SetActive(true);
             Light1.SetActive(false);
             Light2.SetActive(true);
+            Theme.SetActive(false);
+
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
         }
