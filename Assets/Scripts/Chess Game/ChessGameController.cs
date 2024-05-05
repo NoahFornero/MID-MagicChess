@@ -20,6 +20,8 @@ public class ChessGameController : MonoBehaviour
     private ChessPlayer whitePlayer;
     private ChessPlayer blackPlayer;
     private ChessPlayer activePlayer;
+    public GameObject whiteCamera;
+    public GameObject blackCamera;
 
     private GameState state;
 
@@ -110,6 +112,8 @@ public class ChessGameController : MonoBehaviour
     {
         GenerateAllPossiblePlayerMoves(activePlayer);
         GenerateAllPossiblePlayerMoves(GetOpponentToPlayer(activePlayer));
+        whiteCamera.SetActive(!whiteCamera.activeSelf);
+        blackCamera.SetActive(!blackCamera.activeSelf);
         if (CheckIfGameIsFinished())
         {
             EndGame();
