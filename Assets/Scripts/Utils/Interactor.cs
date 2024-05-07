@@ -36,6 +36,5 @@ public class Interactor : MonoBehaviour
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
         }
-        
-    }
+   }
 }
