@@ -11,7 +11,8 @@ public class Interactor : MonoBehaviour
     public Transform InteractorSource;
     public float InteractRange;
     public GameObject player;
-    public GameObject board;
+    [SerializeField] GameObject chessUIWhite; // Reference to the Game UI
+    [SerializeField] GameObject chessUIBlack; // Reference to the Game UI
     public GameObject Light1;
     public GameObject Light2;
     public GameObject Theme;
@@ -28,11 +29,19 @@ public class Interactor : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             player.SetActive(false);
-            board.SetActive(true);
+            if (chessUIWhite.activeSelf || !chessUIBlack.activeSelf)
+            {
+                chessUIWhite.SetActive(false);
+                chessUIWhite.SetActive(true);
+            }
+            else
+            {
+                chessUIBlack.SetActive(false);
+                chessUIBlack.SetActive(true);
+            }
             Light1.SetActive(false);
             Light2.SetActive(true);
             Theme.SetActive(false);
-
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
         }
